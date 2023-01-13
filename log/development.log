@@ -579,3 +579,37 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.4ms | Allocations: 5838)
 
 
+Started GET "/" for ::1 at 2023-01-13 17:39:29 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` DESC[0m
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 4921)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 122ms (Views: 88.1ms | ActiveRecord: 2.5ms | Allocations: 14418)
+
+
+Started POST "/posts" for ::1 at 2023-01-13 17:39:39 +0900
+Processing by PostsController#create as */*
+  Parameters: {"authenticity_token"=>"ZBUI6bqXUqTrqFrb9T/SMvOm96OVrZ1izRya0uv/aVY6r8gk2J1HUMv/sNvuQeIzE/MezeIVyyH++c+gU3CZCQ==", "content"=>"テスト"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO `posts` (`content`, `created_at`, `updated_at`) VALUES ('テスト', '2023-01-13 08:39:57.336060', '2023-01-13 08:39:57.336060')[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (41.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 17393ms (ActiveRecord: 42.5ms | Allocations: 22343)
+
+
+Started GET "/" for ::1 at 2023-01-13 17:39:57 +0900
+Processing by PostsController#index as */*
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` DESC[0m
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.4ms | Allocations: 6019)
+
+
